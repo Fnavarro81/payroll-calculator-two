@@ -45,7 +45,7 @@ public class Employee {
         this.payRate = payRate;
     }
 
-    public double getGrossPay() {
+    public double getGrossPay(double hoursWorked, double payRate) {
         // regularGrossPay is the the gross pay of an assumed 40 hours times pay rate, to be used in case of overtime pay
         double regularGrossPay = 40 * payRate;
         double overTimeHours = hoursWorked - 40;
