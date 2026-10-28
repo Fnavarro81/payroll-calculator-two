@@ -35,6 +35,9 @@ public class PayrollCalculator {
                             employee.getGrossPay(hoursWorked, payRate));
                 }
             }
+            System.out.println("===============================================");
+            bufferedReader.close();
+            fileReader.close();
 
         } catch (IOException e){
             e.printStackTrace();
