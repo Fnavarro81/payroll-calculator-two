@@ -20,7 +20,20 @@ public class PayrollCalculator {
             String line = bufferedReader.readLine();
 
             while ((line = bufferedReader.readLine()) != null){
+                String[] tokens = line.split("\\|");
+                if (tokens.length >= 4){
+                    int employeeId = Integer.parseInt(tokens[0].trim());
+                    String name = tokens[1].trim();
+                    double hoursWorked = Double.parseDouble(tokens[2].trim());
+                    double payRate = Double.parseDouble(tokens[3].trim());
 
+                    Employee employee = new Employee(employeeId, name, hoursWorked, payRate);
+
+                    System.out.printf("%-5s | %-18s | %s%n",
+                            employee.getEmployeeId(),
+                            employee.getName(),
+                            employee.getGrossPay(hoursWorked, payRate));
+                }
             }
 
         } catch (IOException e){
